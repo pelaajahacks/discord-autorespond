@@ -1,0 +1,6 @@
+version: '3'
+services:
+  discord-autorespond:
+    build: ./
+    command: python3 ./main.py
+    restart: unless-stopped

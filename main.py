@@ -1,7 +1,5 @@
 
-from cProfile import run
 import time
-from numpy import block, number
 import websocket #upm package(websocket-client)
 import json
 import threading
@@ -145,6 +143,7 @@ while True:
                                     #print(r.text, r)
                                 except:
                                     #print(e)
+                                    pass
                             #print(e)
             elif "dream" in content.lower() and event["d"]["author"]["id"] != "656519115992858624":
                 print(event["d"]["author"]["id"])
@@ -248,6 +247,8 @@ while True:
                         threading._start_new_thread(rainbow_mode, (None,))
                     except Exception as e:
                         #print(e)
+                        pass
+                        
                 else:
                     r = requests.post(f"https://discord.com/api/v9/channels/{channelid}/messages", data={"content": f"Rainbow mode is already active!"}, headers={"authorization": token})
             elif content.startswith("!rainbow off"):
